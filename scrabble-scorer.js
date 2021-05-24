@@ -79,7 +79,7 @@ function scrabbleScore(word){
   for(let i = 0; i < word.length; i++){
     for (const pointValue in newPointStructure)
     if(pointValue.includes(word[i])){
-      letterPoints += Number(newPointStructure[pointValue]);
+      letterPoints += (newPointStructure[pointValue]);
     }
     
   }
