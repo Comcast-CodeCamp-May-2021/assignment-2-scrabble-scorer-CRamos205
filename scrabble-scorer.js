@@ -1,4 +1,4 @@
-// inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
+ // inspired by https://exercism.io/tracks/javascript/exercises/etl/solutions/91f99a3cca9548cebe5975d7ebca6a85
 
 const input = require("readline-sync");
 
@@ -54,21 +54,22 @@ function initialPrompt() {
 function vowelBonusScore(word){
   word = word.toUpperCase();
   let letterPoints = 0;
-  let vowels = ["A", "E", "I","O", "U"];
+  let vowels = ["A","E","I","O","U"];
 
+//  *** Why did you create this for loop? What did you think you needed the i for?
   for(let i = 0; i < word.length; i++){
-   
-      if(word[i].length === vowels[i].length)
-      {
+  // *** this is currently comparing the entire value of word to the vowels. Is that what we want to do? Or are we wanting to see if the vowels array contains the letter we're corrently looking at in this word? 
+      if(vowels.includes(word[i])){
         letterPoints += 3;
       }
-        else{
-          letterPoints += 1;
+        else {
+        letterPoints ++;
         }
-
+        
   }
 return letterPoints;
 }
+
 
 // ** let scrabbleScore = {name : "Scrabble Score", description: "Traditional scoring", scoringFunction: annonymous function that matches what you've tested so far.  }
 
